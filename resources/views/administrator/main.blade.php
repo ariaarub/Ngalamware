@@ -4,7 +4,7 @@
     <li>{{ $prod->name }}</li><br>
     <li>{{ $prod->description }}</li><br>
     <li>{{ $prod->price }}</li><br>
-    <img src="data:image/png;base64,{{ chunk_split(base64_encode($prod->picture)) }}" height="100" width="100">
+    <img src="{{ asset('img/for db/'.$prod->filepath) }}" height="400" width="300">
     <li><a href="product/delete/{{$prod->id}}">Delete product</a></li>
     <li><a href="product/edit/{{$prod->id}}">Edit product</a></li>
     </form>

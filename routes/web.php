@@ -29,17 +29,15 @@ Route::get('cart', function () {return view('user.cart');})->name('cart');
 Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts');
 
 /* Add product */
-
 Route::get('product/add-product', function() {return view('administrator.add');})->name('product.add');
 Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts');
-#Route::get('product/add-product', function() {return view('administrator.add');})->name('product.delete');
 
 /* Delete product */
 Route::get('product/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct');
 
 /* Edit product */
 Route::get('product/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct');
-Route::post('product/edit/update', 'App\Http\Controllers\Administrator\MainController@updateProduct');
+Route::post('product/update', 'App\Http\Controllers\Administrator\MainController@updateProduct');
 
 
 

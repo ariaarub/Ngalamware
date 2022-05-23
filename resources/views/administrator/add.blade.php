@@ -1,4 +1,4 @@
-<form method="POST" action="/added">
+<form method="POST" action="/added" enctype="multipart/form-data">
     @csrf
 
     <div>
@@ -15,7 +15,7 @@
     </div>
     <div>
         <label>Picture</label><br>
-        <input type="file" name="picture" placeholder="picture" accept="image/*" required><br>
+        <input type="file" name="picture" placeholder="picture" accept="image/*" required ><br>
     </div>
     <input type="submit">
 

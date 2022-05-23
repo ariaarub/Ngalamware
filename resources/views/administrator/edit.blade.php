@@ -1,5 +1,7 @@
 
-<form action="update" method="post">
+<form method="POST" action="/product/update">
+
+    @csrf
 
     <input type="hidden" name="id" value="{{$products->id}}"><br>
 

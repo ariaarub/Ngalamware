@@ -13,7 +13,12 @@ class AddController extends Controller
         $products->name = $request->name;
         $products->description = $request->description;
         $products->price = $request->price;
-        $products->picture = base64_encode($request->picture);
+
+        $hash = $request->picture->hashName();
+
+        $request->picture->move(public_path().'\img\for db', $hash);
+
+        $products->filepath = $hash;
         $products->save();
         return redirect('admin');
     }
