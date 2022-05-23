@@ -14,6 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('user.about');
+})->name('main');
+
+Route::get('about', function () {return view('user.about');})->name('about');
+Route::get('contact', function () {return view('user.contact');})->name('contact');
+Route::get('shop', function () {return view('user.shop');})->name('shop');
+Route::get('cart', function () {return view('user.cart');})->name('cart');
+
+
 require __DIR__.'/user.php';require __DIR__.'/administrator.php';

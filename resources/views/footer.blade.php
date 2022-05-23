@@ -22,10 +22,10 @@
 					<div class="footer-box pages">
 						<h2 class="widget-title">Pages</h2>
 						<ul>
-							<li><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="services.html">Shop</a></li>
-							<li><a href="contact.html">Contact</a></li>
+							<li><a href="{{route('main')}}" method="post">Home</a></li>
+							<li><a href="{{route('about')}}" method="post">About</a></li>
+							<li><a href="{{route('contact')}}" method="post">Contact</a></li>
+							<li><a href="{{route('shop')}}" method="post">Shop</a>
 						</ul>
 					</div>
 				</div>

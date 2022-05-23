@@ -8,15 +8,15 @@
 						<!-- menu start -->
 						<nav class="main-menu">
 							<ul>
-								<li class="current-list-item"><a href="index.html">Home</a>
+								<li class="current-list-item"><a href="{{route('main')}}" method="post">Home</a>
 								</li>
-								<li><a href="about.html">About</a></li>
-								<li><a href="contact.html">Contact</a></li>
-								<li><a href="shop.html">Shop</a>
+								<li><a href="{{route('about')}}" method="post">About</a></li>
+								<li><a href="{{route('contact')}}" method="post">Contact</a></li>
+								<li><a href="{{route('shop')}}" method="post">Shop</a>
 								</li>
 								<li>
 									<div class="header-icons">
-										<a class="shopping-cart" href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+										<a class="shopping-cart" href="{{route('cart')}}" method="post"><i class="fas fa-shopping-cart"></i></a>
 									</div>
 								</li>
 							</ul>
