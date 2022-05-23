@@ -1,4 +1,4 @@
-<form method="POST" action="">
+<form method="POST" action="/added">
     @csrf
 
     <div>
@@ -11,11 +11,11 @@
     </div>
     <div>
         <label>Price</label><br>
-        <input type="text name="price" placeholder="price" required><br>
+        <input type="text" name="price" placeholder="price" required><br>
     </div>
     <div>
         <label>Picture</label><br>
-        <input type="file" name="pictures" placeholder="pictures" accept="image/*" required><br>
+        <input type="file" name="picture" placeholder="picture" accept="image/*" required><br>
     </div>
     <input type="submit">
 
