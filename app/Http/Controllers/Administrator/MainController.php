@@ -18,7 +18,9 @@ class MainController extends Controller
 
     public function deleteProduct($id){
         $products = Product::find($id);
+        $filepath = $products->filepath;
         $products->delete();
+        unlink(public_path('img/for db/'.$filepath));
         return redirect('admin');
     }
 
