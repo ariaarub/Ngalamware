@@ -23,4 +23,9 @@ Route::get('shop', function () {return view('user.shop');})->name('shop');
 Route::get('cart', function () {return view('user.cart');})->name('cart');
 
 
+Route::get('product/add-product', function() {return view('administrator.add');});
+Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts');
+
+
+
 require __DIR__.'/user.php';require __DIR__.'/administrator.php';
