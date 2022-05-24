@@ -33,7 +33,7 @@ Route::get('checkout', function () {return view('user.checkout');})->name('check
 Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts');
 
 /* Add product */
-Route::get('product/add-product', function() {return view('administrator.add');})->name('product.add');
+Route::get('products/add-product', function() {return view('administrator.add');})->name('product.add');
 Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts');
 
 /* Delete product */
