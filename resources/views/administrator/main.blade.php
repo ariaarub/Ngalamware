@@ -5,8 +5,8 @@
     <li>{{ $prod->description }}</li><br>
     <li>{{ $prod->price }}</li><br>
     <img src="{{ asset('img/for db/'.$prod->filepath) }}" height="400" width="300">
-    <li><a href="product/delete/{{$prod->id}}">Delete product</a></li>
-    <li><a href="product/edit/{{$prod->id}}">Edit product</a></li>
+    <li><a href="products/delete/{{$prod->id}}">Delete product</a></li>
+    <li><a href="products/edit/{{$prod->id}}">Edit product</a></li>
     </form>
     </div>
 @empty

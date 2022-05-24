@@ -37,11 +37,11 @@ Route::get('products/add-product', function() {return view('administrator.add');
 Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts');
 
 /* Delete product */
-Route::get('product/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct');
+Route::get('products/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct');
 
 /* Edit product */
-Route::get('product/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct');
-Route::post('product/update', 'App\Http\Controllers\Administrator\MainController@updateProduct');
+Route::get('products/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct');
+Route::post('products/update', 'App\Http\Controllers\Administrator\MainController@updateProduct');
 
 
 

@@ -104,15 +104,15 @@
             
             <div class="form-group">
                 <label>Name</label>
-                <input type="text" name="name" placeholder="Product name" required value="{{$products->id}}">
+                <input type="text" name="name" placeholder="Product name" required value="{{$products->name}}">
             </div>
             <div class="form-group">
                 <label >Description</label>
-                <textarea name="description" id="description" rows="5" placeholder="Description" required value="{{$products->id}}"></textarea>
+                <textarea name="description" id="description" rows="5" required>{{$products->description}}</textarea>
             </div>
             <div class="form-group">
                 <label>Price</label>
-                <input type="text" name="price" placeholder="Price" required value="{{$products->id}}">
+                <input type="text" name="price" placeholder="Price" required value="{{$products->price}}">
             </div>
             <div class="form-group">
                 <button type="submit" class="submit">Submit</button>
