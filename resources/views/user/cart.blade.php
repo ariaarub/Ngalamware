@@ -57,18 +57,18 @@
 								</tr>
 							</thead>
 							<tbody>
+								@forelse($carts as $shopping)
 								<tr class="table-body-row">
-									@forelse($carts as $shopping)
 									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
-									<td class="product-image"><img src="{{ asset('img/for db/'.$shopping->products.filepath) }}" alt=""></td>
-									<td class="product-name">{{$shopping->products.name}}</td>
-									<td class="product-price">{{$shopping->products.price}}</td>
-									<td class="product-quantity"><input type="number" value="{{$shopping->carts.amount}}"></td>
+									<td class="product-image"><img src="{{ asset('img/for db/'.$shopping->filepath) }}" alt=""></td>
+									<td class="product-name">{{$shopping->name}}</td>
+									<td class="product-price">{{$shopping->price}}</td>
+									<td class="product-quantity"><input type="number" value="{{$shopping->amount}}"></td>
 									<td class="product-total"></td>
 									@empty
 									<p>empty</p>
-									@endforelse
 								</tr>
+								@endforelse
 								
 							</tbody>
 						</table>
