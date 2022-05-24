@@ -40,7 +40,7 @@ Route::get('remove-from-cart/{id}', 'App\Http\Controllers\User\CartController@re
 
 /* Finalize purchase */
 Route::get('checkout', 'App\Http\Controllers\User\CartController@checkoutAmount')->name('checkout');
-
+Route::post('/finish', 'App\Http\Controllers\User\CartController@Finish');
 
 
 

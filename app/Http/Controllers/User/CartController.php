@@ -5,6 +5,7 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Cart;
+use App\Models\OrderDetail;
 use Illuminate\Support\Facades\DB;
 
 class CartController extends Controller
@@ -49,5 +50,29 @@ class CartController extends Controller
 
         return view('user.checkout', ['carts' => $carts, 'sum' => $sum]);
 
+    }
+
+    public function Finish(Request $request){
+        $order_details = new OrderDetail;
+        $order_details->name = $request->name;
+        $order_details->email = $request->email;
+        $order_details->address = $request->address;
+        $order_details->notes = $request->bill;
+
+        $sum = DB::table('carts')
+            ->where('order_detail_id', '=', 0)
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->sum('products.price');
+        
+        $order_details->total = $sum;
+        $order_details->save();
+
+        $id = DB::table('order_details')->max('id');
+
+        $affected = DB::table('carts')
+                    ->where('order_detail_id', '=', 0)
+                    ->update(['order_detail_id' => $id]);
+
+        return redirect('index');
     }
 }

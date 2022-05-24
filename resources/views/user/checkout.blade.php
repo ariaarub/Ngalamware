@@ -59,6 +59,7 @@
 						      <div class="card-body">
 						        <div class="billing-address-form">
 						        	<form method="POST" id="finalize" action="/finish" enctype="multipart/form-data">
+										@csrf
 						        		<p><input type="text" name="name" placeholder="Name"></p>
 						        		<p><input type="email" name="email" placeholder="Email"></p>
 						        		<p><input type="text" name="address" placeholder="Address"></p>

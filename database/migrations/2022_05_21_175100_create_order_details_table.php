@@ -15,10 +15,11 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id');
-            $table->integer('payment_method_id');
+            $table->string('name');
+            $table->string('email');
             $table->string('address');
             $table->integer('total');
+            $table->string('notes');
             $table->timestamps();
         });
     }
