@@ -97,7 +97,7 @@
 <body>
     <div class="wrapper">
         <h2>Edit Product</h2>
-        <form method="POST" action="/added" enctype="multipart/form-data">
+        <form method="POST" action="/products/update" enctype="multipart/form-data">
             @csrf
         
             <input type="hidden" name="id" value="{{$products->id}}">
