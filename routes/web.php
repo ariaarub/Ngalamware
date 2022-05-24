@@ -47,20 +47,20 @@ Route::post('/finish', 'App\Http\Controllers\User\CartController@Finish');
 /* Administrator section */
 
 /* Main show product */
-Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts');
+Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts')->middleware('auth:administrator');
 
 /* Add product */
-Route::get('products/add-product', function() {return view('administrator.add');})->name('product.add');
-Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts');
+Route::get('products/add-product', function() {return view('administrator.add');})->middleware('auth:administrator')->name('product.add');
+Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts')->middleware('auth:administrator');
 
 
 
 /* Delete product */
-Route::get('products/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct');
+Route::get('products/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct')->middleware('auth:administrator');
 
 /* Edit product */
-Route::get('products/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct');
-Route::post('products/update', 'App\Http\Controllers\Administrator\MainController@updateProduct');
+Route::get('products/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct')->middleware('auth:administrator');
+Route::post('products/update', 'App\Http\Controllers\Administrator\MainController@updateProduct')->middleware('auth:administrator');
 
 
 

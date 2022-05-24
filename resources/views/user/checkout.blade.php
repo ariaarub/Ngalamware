@@ -60,11 +60,11 @@
 						        <div class="billing-address-form">
 						        	<form method="POST" id="finalize" action="/finish" enctype="multipart/form-data">
 										@csrf
-						        		<p><input type="text" name="name" placeholder="Name"></p>
-						        		<p><input type="email" name="email" placeholder="Email"></p>
-						        		<p><input type="text" name="address" placeholder="Address"></p>
-						        		<p><input type="tel" name="telephone" placeholder="Phone"></p>
-						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
+						        		<p><input type="text" name="name" placeholder="Name" required></p>
+						        		<p><input type="email" name="email" placeholder="Email" required></p>
+						        		<p><input type="text" name="address" placeholder="Address" required></p>
+						        		<p><input type="tel" name="telephone" placeholder="Phone" required></p>
+						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something" required></textarea></p>
 						        	</form>
 						        </div>
 						      </div>
