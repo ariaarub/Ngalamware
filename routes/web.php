@@ -13,21 +13,29 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/* User section */
+
 Route::get('/', function () {
     return view('user.index');
 })->name('main');
 
-/* User section */
+/* Main sitemaps */
 Route::get('about', function () {return view('user.about');})->name('about');
 Route::get('contact', function () {return view('user.contact');})->name('contact');
 Route::get('shop', 'App\Http\Controllers\User\ShopController@index')->name('shop');
-Route::get('cart', function () {return view('user.cart');})->name('cart');
 
 
+Route::get('cart', 'App\Http\Controllers\User\CartController@index')->name('cart');
+
+/* Look product detail */
 Route::get('product/{id}', 'App\Http\Controllers\User\ShopController@lookProduct');
 
+/* Buy product to cart */
 Route::get('add-to-cart/{id}', 'App\Http\Controllers\User\ShopController@buyProduct');
+Route::get('product/add-to-cart/{id}', 'App\Http\Controllers\User\ShopController@buyProduct');
 
+
+/* Finalize purchase */
 Route::get('checkout', function () {return view('user.checkout');})->name('checkout');
 
 /* Administrator section */
