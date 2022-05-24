@@ -87,8 +87,8 @@
                             <li class="price">{{ $prod->price }}</li><br><br><br><br>
                         </div>
                         <div class="button">
-                            <li><a href="product/delete/{{$prod->id}}" class="btn mr-2">Delete product</a></li>
-                            <li><a href="product/edit/{{$prod->id}}" class="btn mr-2">Edit product</a></li>
+                            <li><a href="products/delete/{{$prod->id}}" class="btn mr-2">Delete product</a></li>
+                            <li><a href="products/edit/{{$prod->id}}" class="btn mr-2">Edit product</a></li>
                         </div>
                     </div>
                 </div>
