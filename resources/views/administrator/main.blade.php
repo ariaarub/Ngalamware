@@ -72,11 +72,12 @@
     <body>
         <h2>Product</h2>
         <div class="container">
+        @forelse ($products as $prod)
             <form action="product/modify" method="post">
                 <div class="row">
                     <div class="column left">
                         <div class="image">
-                            <img src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fid.m.wikipedia.org%2Fwiki%2FBerkas%3APhotoshop_CC_icon.png&psig=AOvVaw3erO3_kFXCLdEdX55MIX0k&ust=1653452443494000&source=images&cd=vfe&ved=0CAwQjRxqFwoTCNDxob-k9_cCFQAAAAAdAAAAABAD" height="400" width="300">
+                            <img src="{{ asset('img/for db/'.$prod->filepath) }}" height="400" width="300">
                         </div>
                     </div>
                     <div class="column right">
