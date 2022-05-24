@@ -73,6 +73,6 @@ class CartController extends Controller
                     ->where('order_detail_id', '=', 0)
                     ->update(['order_detail_id' => $id]);
 
-        return redirect('index');
+        return redirect('');
     }
 }
