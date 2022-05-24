@@ -25,7 +25,9 @@ class ShopController extends Controller
         $products = Product::find($id);
         $carts = new Cart;
 
-        $carts->products_id = $products->id;
+        $carts->product_id = $products->id;
         $carts->save();
+
+        return redirect('user.cart');
     }
 }

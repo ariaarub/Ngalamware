@@ -23,7 +23,10 @@ Route::get('contact', function () {return view('user.contact');})->name('contact
 Route::get('shop', 'App\Http\Controllers\User\ShopController@index')->name('shop');
 Route::get('cart', function () {return view('user.cart');})->name('cart');
 
+
 Route::get('product/{id}', 'App\Http\Controllers\User\ShopController@lookProduct');
+
+Route::get('add-to-cart/{id}', 'App\Http\Controllers\User\ShopController@buyProduct');
 
 Route::get('checkout', function () {return view('user.checkout');})->name('checkout');
 

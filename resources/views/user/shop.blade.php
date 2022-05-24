@@ -55,7 +55,7 @@
 						</div>
 						<h3>{{ $prod->name }}</h3>
 						<p class="product-price"> {{ $prod->price }} </p>
-						<a href="{{route('cart.add')}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<a href="add-to-cart/{{$prod->id}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
 			</div>
