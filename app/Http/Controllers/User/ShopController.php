@@ -28,6 +28,6 @@ class ShopController extends Controller
         $carts->product_id = $products->id;
         $carts->save();
 
-        return redirect('user.cart');
+        return redirect('cart');
     }
 }
