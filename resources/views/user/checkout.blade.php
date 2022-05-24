@@ -58,45 +58,13 @@
 						    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
 						      <div class="card-body">
 						        <div class="billing-address-form">
-						        	<form action="index.html">
-						        		<p><input type="text" placeholder="Name"></p>
-						        		<p><input type="email" placeholder="Email"></p>
-						        		<p><input type="text" placeholder="Address"></p>
-						        		<p><input type="tel" placeholder="Phone"></p>
+						        	<form method="POST" id="finalize" action="/finish" enctype="multipart/form-data">
+						        		<p><input type="text" name="name" placeholder="Name"></p>
+						        		<p><input type="email" name="email" placeholder="Email"></p>
+						        		<p><input type="text" name="address" placeholder="Address"></p>
+						        		<p><input type="tel" name="telephone" placeholder="Phone"></p>
 						        		<p><textarea name="bill" id="bill" cols="30" rows="10" placeholder="Say Something"></textarea></p>
 						        	</form>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingTwo">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-						          Shipping Address
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="shipping-address-form">
-						        	<p>Your shipping address form is here.</p>
-						        </div>
-						      </div>
-						    </div>
-						  </div>
-						  <div class="card single-accordion">
-						    <div class="card-header" id="headingThree">
-						      <h5 class="mb-0">
-						        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-						          Card Details
-						        </button>
-						      </h5>
-						    </div>
-						    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-						      <div class="card-body">
-						        <div class="card-details">
-						        	<p>Your card details goes here.</p>
 						        </div>
 						      </div>
 						    </div>
@@ -120,10 +88,15 @@
 									<td>Product</td>
 									<td>Total</td>
 								</tr>
+								@forelse($carts as $carts)
 								<tr>
-									<td>Photoshop</td>
-									<td>$15.00</td>
+									<td>{{$carts->name}}</td>
+									<td>{{$carts->price}}</td>
+
+									@empty
 								</tr>
+								@endforelse
+
 								
 							</tbody>
 							<tbody class="checkout-details">
@@ -131,11 +104,11 @@
 								
 								<tr>
 									<td>Total</td>
-									<td>$15</td>
+									<td>{{$sum}}</td>
 								</tr>
 							</tbody>
 						</table>
-						<a href="#" class="boxed-btn">Place Order</a>
+						<input type="submit" form="finalize" class="boxed-btn" value="Place Order">
 					</div>
 				</div>
 			</div>

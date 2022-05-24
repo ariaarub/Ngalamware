@@ -52,19 +52,17 @@
 									<th class="product-image">Product Image</th>
 									<th class="product-name">Name</th>
 									<th class="product-price">Price</th>
-									<th class="product-quantity">Quantity</th>
 									<th class="product-total">Total</th>
 								</tr>
 							</thead>
 							<tbody>
 								@forelse($carts as $shopping)
 								<tr class="table-body-row">
-									<td class="product-remove"><a href="#"><i class="far fa-window-close"></i></a></td>
+									<td class="product-remove"><a href="remove-from-cart/{{$shopping->id}}"><i class="far fa-window-close"></i></a></td>
 									<td class="product-image"><img src="{{ asset('img/for db/'.$shopping->filepath) }}" alt=""></td>
 									<td class="product-name">{{$shopping->name}}</td>
 									<td class="product-price">{{$shopping->price}}</td>
-									<td class="product-quantity"><input type="number" value="{{$shopping->amount}}"></td>
-									<td class="product-total"></td>
+									<td class="product-total">{{$shopping->amount}}</td>
 									@empty
 									<p>empty</p>
 								</tr>
@@ -86,32 +84,13 @@
 							</thead>
 							<tbody>
 								<tr class="total-data">
-									<td><strong>Subtotal: </strong></td>
-									<td>$500</td>
-								</tr>
-								<tr class="total-data">
-									<td><strong>Shipping: </strong></td>
-									<td>$45</td>
-								</tr>
-								<tr class="total-data">
 									<td><strong>Total: </strong></td>
-									<td>$545</td>
+									<td>{{$sum}}</td>
 								</tr>
 							</tbody>
 						</table>
 						<div class="cart-buttons">
-							<a href="cart.html" class="boxed-btn">Update Cart</a>
 							<a href="{{route('checkout')}}" class="boxed-btn black">Check Out</a>
-						</div>
-					</div>
-
-					<div class="coupon-section">
-						<h3>Apply Coupon</h3>
-						<div class="coupon-form-wrap">
-							<form action="index.html">
-								<p><input type="text" placeholder="Coupon"></p>
-								<p><input type="submit" value="Apply"></p>
-							</form>
 						</div>
 					</div>
 				</div>

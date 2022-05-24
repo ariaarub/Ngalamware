@@ -13,11 +13,41 @@ class CartController extends Controller
         $carts = DB::table('carts')
                 ->where('order_detail_id', '=', 0)
                 ->join('products', 'carts.product_id', '=', 'products.id')
-                ->select('carts.*', 'products.*')
+                ->select('carts.*', 'products.name', 'products.description', 'products.price', 'products.filepath')
+
                 ->get();
 
+        $sum = DB::table('carts')
+                ->where('order_detail_id', '=', 0)
+                ->join('products', 'carts.product_id', '=', 'products.id')
+                ->sum('products.price');
 
-        return view('user.cart', ['carts' => $carts]);
+
+        return view('user.cart', ['carts' => $carts, 'sum' => $sum]);
+
+    }
+
+    public function removeFromCart($id){
+        $carts = Cart::find($id);
+        $carts->delete();
+        return redirect('cart');
+    }
+
+
+    public function checkoutAmount(){
+        $carts = DB::table('carts')
+            ->where('order_detail_id', '=', 0)
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->select(DB::raw('sum(products.price) as price, products.name'))
+            ->groupBy('products.name')
+            ->get();
+
+        $sum = DB::table('carts')
+            ->where('order_detail_id', '=', 0)
+            ->join('products', 'carts.product_id', '=', 'products.id')
+            ->sum('products.price');
+
+        return view('user.checkout', ['carts' => $carts, 'sum' => $sum]);
 
     }
 }
