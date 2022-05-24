@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('user.about');
+    return view('user.index');
 })->name('main');
 
 /* User section */
