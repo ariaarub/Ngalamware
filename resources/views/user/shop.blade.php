@@ -46,20 +46,22 @@
 		<div class="container">
 
 			
-
+			@forelse($products as $prod)
 			<div class="row product-lists">
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="single-product.html"><img src="img/products/download.png" alt=""></a>
+							<a href="product/{{$prod->id}}"><img src="{{ asset('img/for db/'.$prod->filepath) }}" alt=""></a>
 						</div>
-						<h3>Photoshop</h3>
-						<p class="product-price"><span>Per month</span> 15$ </p>
-						<a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+						<h3>{{ $prod->name }}</h3>
+						<p class="product-price"> {{ $prod->price }} </p>
+						<a href="{{route('cart')}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 					</div>
 				</div>
-				
 			</div>
+			@empty
+			<p>Empty</p>
+			@endforelse
 
 			
 		</div>

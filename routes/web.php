@@ -20,8 +20,12 @@ Route::get('/', function () {
 /* User section */
 Route::get('about', function () {return view('user.about');})->name('about');
 Route::get('contact', function () {return view('user.contact');})->name('contact');
-Route::get('shop', function () {return view('user.shop');})->name('shop');
+Route::get('shop', 'App\Http\Controllers\User\ShopController@index')->name('shop');
 Route::get('cart', function () {return view('user.cart');})->name('cart');
+
+Route::get('product/{id}', 'App\Http\Controllers\User\ShopController@lookProduct');
+
+Route::get('checkout', function () {return view('user.checkout');})->name('checkout');
 
 /* Administrator section */
 
