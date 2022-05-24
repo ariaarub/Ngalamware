@@ -55,7 +55,7 @@
 						<p class="single-product-pricing"> {{ $products->price }}</p>
 						<p>{{ $products->description }}</p>
 						<div class="single-product-form">
-							<a href="{{route('cart')}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
+							<a href="{{route('cart.add')}}" class="cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</a>
 							<p><strong>Categories: </strong>Software, Subscribe</p>
 						</div>
 						<h4>Share:</h4>
