@@ -21,7 +21,11 @@ Route::get('/', function () {
 
 /* Main sitemaps */
 Route::get('about', function () {return view('user.about');})->name('about');
+
+/* Contact us */
 Route::get('contact', function () {return view('user.contact');})->name('contact');
+Route::post('/emailed', 'App\Http\Controllers\User\ContactController@appendMessage');
+
 Route::get('shop', 'App\Http\Controllers\User\ShopController@index')->name('shop');
 
 

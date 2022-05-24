@@ -52,7 +52,8 @@
 					</div>
 				 	<div id="form_status"></div>
 					<div class="contact-form">
-						<form type="POST" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+						<form method="POST" action="/emailed" id="fruitkha-contact" onSubmit="return valid_datas( this );">
+							@csrf
 							<p>
 								<input type="text" placeholder="Name" name="name" id="name" required>
 								<input type="email" placeholder="Email" name="email" id="email" required>

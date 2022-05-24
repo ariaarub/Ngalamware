@@ -46,7 +46,7 @@
 			<div class="row">
 				<div class="col-md-5">
 					<div class="single-product-img">
-						<img src="{{ asset('img/for db/'.$products->filepath) }}" alt="">
+						<img src="{{ asset('img/for db/'.$products->filepath) }}" style="max-width:300px;" alt="">
 					</div>
 				</div>
 				<div class="col-md-7">

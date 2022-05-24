@@ -77,7 +77,7 @@
                 <div class="row">
                     <div class="column left">
                         <div class="image">
-                            <img src="{{ asset('img/for db/'.$prod->filepath) }}" height="400" width="300">
+                            <img src="{{ asset('img/for db/'.$prod->filepath) }}" style="max-width: 300px;">
                         </div>
                     </div>
                     <div class="column right">

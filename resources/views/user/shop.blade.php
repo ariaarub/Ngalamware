@@ -51,7 +51,7 @@
 				<div class="col-lg-4 col-md-6 text-center strawberry">
 					<div class="single-product-item">
 						<div class="product-image">
-							<a href="product/{{$prod->id}}"><img src="{{ asset('img/for db/'.$prod->filepath) }}" alt=""></a>
+							<a href="product/{{$prod->id}}"><img src="{{ asset('img/for db/'.$prod->filepath) }}" style="max-width:300px;" alt=""></a>
 						</div>
 						<h3>{{ $prod->name }}</h3>
 						<p class="product-price"> {{ $prod->price }} </p>
