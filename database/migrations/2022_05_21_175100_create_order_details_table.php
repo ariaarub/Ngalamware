@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('order_details', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('payment_method_id')->constrained('payment_methods');
+            $table->integer('user_id');
+            $table->integer('payment_method_id');
             $table->string('address');
             $table->integer('total');
             $table->timestamps();
