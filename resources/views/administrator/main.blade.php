@@ -70,8 +70,15 @@
         </style>
     </head>
     <body>
+        <div>
+            <form action="{{route('administrator.logout')}}" method="post">
+                @csrf
+            <a href="" onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</a>
+            </form>
+        </div>
         <h2>Product</h2>
         <div class="container">
+
         @forelse ($products as $prod)
             <form action="product/modify" method="post">
                 <div class="row">

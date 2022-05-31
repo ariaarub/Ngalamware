@@ -60,7 +60,7 @@ Route::post('/finish', 'App\Http\Controllers\User\CartController@Finish');
 /* Administrator section */
 
 /* Main show product */
-Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts')->middleware(['auth:administrator']);
+Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts')->middleware(['auth:administrator'])->name('admin');
 
 /* Add product */
 Route::get('products/add-product', function() {return view('administrator.add');})->middleware(['auth:administrator'])->name('product.add');
