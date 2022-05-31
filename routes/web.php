@@ -1,6 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Administrator\Auth\AuthenticatedSessionController;
+use App\Http\Controllers\Administrator\Auth\ConfirmablePasswordController;
+use App\Http\Controllers\Administrator\Auth\EmailVerificationNotificationController;
+use App\Http\Controllers\Administrator\Auth\EmailVerificationPromptController;
+use App\Http\Controllers\Administrator\Auth\NewPasswordController;
+use App\Http\Controllers\Administrator\Auth\PasswordResetLinkController;
+use App\Http\Controllers\Administrator\Auth\RegisteredUserController;
+use App\Http\Controllers\Administrator\Auth\VerifyEmailController;
+use App\Http\Controllers\Administrator\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,20 +60,20 @@ Route::post('/finish', 'App\Http\Controllers\User\CartController@Finish');
 /* Administrator section */
 
 /* Main show product */
-Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts')->middleware('auth:administrator');
+Route::get('admin', 'App\Http\Controllers\Administrator\MainController@showProducts')->middleware(['auth:administrator']);
 
 /* Add product */
-Route::get('products/add-product', function() {return view('administrator.add');})->middleware('auth:administrator')->name('product.add');
-Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts')->middleware('auth:administrator');
+Route::get('products/add-product', function() {return view('administrator.add');})->middleware(['auth:administrator'])->name('product.add');
+Route::post('/added', 'App\Http\Controllers\Administrator\AddController@addProducts')->middleware(['auth:administrator']);
 
 
 
 /* Delete product */
-Route::get('products/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct')->middleware('auth:administrator');
+Route::get('products/delete/{id}', 'App\Http\Controllers\Administrator\MainController@deleteProduct')->middleware(['auth:administrator']);
 
 /* Edit product */
-Route::get('products/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct')->middleware('auth:administrator');
-Route::post('products/update', 'App\Http\Controllers\Administrator\MainController@updateProduct')->middleware('auth:administrator');
+Route::get('products/edit/{id}', 'App\Http\Controllers\Administrator\MainController@editProduct')->middleware(['auth:administrator']);
+Route::post('products/update', 'App\Http\Controllers\Administrator\MainController@updateProduct')->middleware(['auth:administrator']);
 
 
 
